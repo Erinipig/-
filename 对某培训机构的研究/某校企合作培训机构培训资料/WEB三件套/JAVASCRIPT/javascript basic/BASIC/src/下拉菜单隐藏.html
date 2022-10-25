@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单隐藏</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        $(function() {
+            $("span").click(function () {
+                // 获取当前元素的下一个兄弟元素，如果该元素显示则隐藏，反之,从元素的高度宽度透明度改变
+                // $(this).next().toggle(2000,function () {
+                //     alert("hello world")
+                // });
+                // 淡入淡出元素，从元素的透明度改变
+                $(this).next().fadeToggle();
+            });
+        })
+    </script>
+</head>
+<body>
+
+    <ul>
+        <li>
+            <span>广西壮族自治区</span>
+            <ul>
+                <li>南宁市</li>
+                <li>百色市</li>
+                <li>桂林市</li>
+            </ul>
+        </li>
+        <li>
+            <span>广东省</span>
+            <ul>
+                <li>深圳市</li>
+                <li>广州市</li>
+                <li>佛山市</li>
+            </ul>
+        </li>
+        <li>
+            <span>湖南省</span>
+            <ul>
+                <li>长沙市</li>
+                <li>衡阳市</li>
+                <li>湘潭市市</li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>

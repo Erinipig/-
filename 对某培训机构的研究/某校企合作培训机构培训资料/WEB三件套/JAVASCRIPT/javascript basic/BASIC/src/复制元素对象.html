@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复制元素对象</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("img").click(function () {
+                // 克隆当前img元素对象，然后追加到当前元素的尾部(外部追加)，浅克隆，只复制结构，没有绑定的事件
+                $(this).clone().insertAfter($(this));
+                // 深克隆，复制结构和事件
+                $(this).clone(true).insertAfter($(this));
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="image/1.png" width="200px" height="100px" />
+</body>
+</html>

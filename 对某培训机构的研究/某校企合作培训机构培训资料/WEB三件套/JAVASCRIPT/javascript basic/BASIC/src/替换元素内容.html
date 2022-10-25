@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>替换元素内容·</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#btn").click(function () {
+                let $li = $("<li>3</li>");
+                $li.replaceAll($("ul li:first"));
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <input type="button" id="btn" value="更换元素" />
+</body>
+</html>

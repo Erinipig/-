@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容过滤选择器</title>
+    <style type="text/css">
+        div {
+            width: 350px;
+            height: 200px;
+            background-color: aqua;
+            float: left;
+            margin: 0 5px;
+            text-align: center;
+            border-radius: 20px;
+        }
+    </style>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 包含了'鸟'文本内容的div元素
+            // $("div:contains('鸟')").css("backgroundColor","red");
+            // 不包含任何后代元素或者是文本内容
+            // $("div:empty").css("backgroundColor","red");
+            // 包含任何后代元素或者是文本内容的div
+            // $("dive:parent").css("backgroundColor","yellow");
+            // 后代元素中包含p标签的div
+            $("div:has(p)").css("backgroundColor","darkcyan");
+        });
+    </script>
+</head>
+<body>
+    <div id="shi">
+        <ul>
+            <li class="red">君不见，黄河之水天上来，奔流到海不复回</li>
+            <li>君不见，高堂明镜悲白发，朝如青丝暮成雪</li>
+            <li>人生得意须尽欢，莫使金樽空对月</li>
+            <li class="red">天生我材必有用，千金散尽还复来</li>
+        </ul>
+    </div>
+    <div></div>
+    <div>
+        <p>
+            君不见，黄河之水天上来，奔流到海不复回<br />
+            君不见，高堂明镜悲白发，朝如青丝暮成雪<br />
+            人生得意须尽欢，莫使金樽空对月<br />
+            天生我材必有用，千金散尽还复来<br />
+        </p>
+    </div>
+
+</body>
+</html>

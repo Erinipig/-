@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom对象和jQuery对象</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("h3").click(function () {
+                $(this).css("color","blue");
+
+                /**
+                 *  // this是dom对象，指当前点击的对象，dom对象的style属性
+                 *  this.style.color = "red";
+                 *  // this.style.color = "red";
+                 *  $(this)是jQuery对象，使用css()函数
+                 */
+
+                /**
+                 * dom对象：使用js原生方法获取的元素对象
+                 * jQuery对象：jQuery框架特有的对象，是dom对象的数组形式，jQuery对象可以看做是dom对象的数组
+                 *
+                 * 转换方法：
+                 * dom对象转换成jQuery对象：jQuery对象=$(dom对象)
+                 * jQuery对象转换成dom对象：dom对象=jQuery对象[下标号],或者调用jQuery对象.get(序号)
+                 */
+            })
+        })
+    </script>
+</head>
+<body>
+    <h3>Hello World!</h3>
+</body>
+</html>

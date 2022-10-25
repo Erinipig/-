@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn1").click(function () {
+                console.log($(":text").val());
+            });
+            $("#btn2").click(function () {
+                console.log($(":password").val());
+            });
+            $("#btn3").click(function () {
+                console.log($(":sex").val());
+            });
+            $("#btn4").click(function () {
+                console.log($(":hobby").val());
+            });
+        })
+    </script>
+</head>
+<body>
+    NAME: <input type="text" name="name" id="name" value=""> <br />
+    PASSWORD: <input type="password" name="password" id="password" value=""> <br />
+    SEX:  <input type="radio" name="sex" value="MAN"> MAN <br />
+        <input type="radio" name="sex"  value="WOMEN"> WOMEN <br />
+    HOBBY: <input type="checkbox" name="hobby" value="STUDY"> STUDY <br />
+    <input type="checkbox" name="hobby" value="GAME"> GAME <br />
+    <input type="checkbox" name="hobby" value="SPORT"> SPORT <br />
+    学历: <select name="edu">
+        <option value="">--PLEASE CHOOSE--</option>
+        <OPTION value="专科">专科</OPTION>
+        <OPTION value="研究生">研究生</OPTION>
+        <OPTION value="本科">本科</OPTION>
+    </select><br/>
+    <input type="button" id="btn1" value="获取text文本框的内容" />
+    <input type="button" id="btn2" value="获取password文本框的内容" />
+    <input type="button" id="btn3" value="获取sex文本框的内容" />
+    <input type="button" id="btn4" value="获取hobby文本框的内容" />
+    <input type="button" id="btn5" value="获取学历文本框的内容" />
+</body>
+</html>

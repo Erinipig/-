@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选</title>
+    <script type="text/javascript">
+        function allChoose(obj) {
+            // 跟name属性获取元素，返回数组
+            let array = document.getElementsByName("hobby");
+            for (let i=0;i<array.length;i++) {
+                // 把每一个对象的check的属性值设置成全选复选框checked的属性值
+                array[i].checked = obj.checked;
+            }
+        }
+        function ch() {
+            // 获取全选框对象
+            let all = document.getElementById("all");
+            // 根据属性name获取所有的复选框
+            let array  = document.getElementsByName("hobby");
+            // 统计选中的复选框数量
+            let num = 0;
+            for (let i=0;i<array.length;i++) {
+                // 判断复选框是否选中
+                if (array[i].checked) {
+                    num++;
+                }
+            }
+            // 如果所有的复选框都被选中
+            if (num==array.length) {
+                all.checked = true;
+            }else {
+                all.checked = false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="all" onchange="allChoose(this)">全选<br />
+    <hr />
+    <input type="checkbox" name="hobby" value="学习" onchange="ch()"/>学习<br />
+    <input type="checkbox" name="hobby" value="PWN" onchange="ch()"/>PWN<br />
+    <input type="checkbox" name="hobby" value="游戏" onchange="ch()"/>游戏<br />
+    <input type="checkbox" name="hobby" value="挣钱" onchange="ch()"/>挣钱<br />
+    <input type="checkbox" name="hobby" value="运动" onchange="ch()"/>运动<br />
+    <input type="checkbox" name="hobby" value="代码" onchange="ch()"/>代码<br />
+
+
+</body>
+</html>

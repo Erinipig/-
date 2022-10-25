@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据id获取元素</title>
+    <script type="text/javascript">
+        function getContent() {
+            // 根据id获取元素，打印元素的HTML内容
+            alert(document.getElementById("content").innerHTML);
+        }
+        function getName() {
+            // 根据id元素获取元素，打印元素输入框中得值
+            alert(document.getElementById("name").value);
+        }
+    </script>
+</head>
+<body>
+    <p id="content">
+        千里之行始于足下，
+        君不见黄河之水天上来，
+        奔流到海不复回
+        故天将降大任，必先苦其心志，
+        劳其筋骨，饿其体肤，空乏其身
+        行路难，行路难，今安在，
+        长风破浪会有时，直挂云帆济沧海。
+    </p>     <br />
+    <input type="button" value="获取段落内容" onclick="getContent()"/>
+    <hr />
+    <br />
+    姓名：<input type="text" id="name" /> <br />
+    <input type="button" value="获取姓名" onclick="getName"/>
+</body>
+</html>

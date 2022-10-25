@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image对象创建</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function change() {
+            let i = 0;
+            // 创建对象
+            let image = new Image();
+            if (i%2==0) {
+                // 给对象src赋值
+                image.src = "image/2.png";
+            }else {
+                // 给对象src赋值
+                image.src = "image/1.png";
+            }
+            i++;
+            document.getElementById("pic").src = image.src;
+
+        }
+    </script>
+</body>
+    <input type="button" value="切换图片" onclick="change()"/> <br />
+    <img src="image/1.png" width="200" height="300" id="pic">
+</html>

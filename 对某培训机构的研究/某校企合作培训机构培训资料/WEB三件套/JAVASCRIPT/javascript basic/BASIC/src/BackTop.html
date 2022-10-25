@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BackTop</title>
+    <style>
+        .divH {
+            height: 1800px;
+        }
+        .divT {
+            width: 50px;
+            height: 50px;
+            font-size: 23px;
+            background-color: #2F4F4F;
+            color: white;
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+        }
+        .divT:hover{
+            cursor: pointer;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="divH"></div>
+    <div class="divT hide" onclick="ReturnTop();"><strong>返回顶部</strong></div>
+
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+        window.onscroll = function () {
+            let current = $(window).scrollTop();
+            if (current > 180){
+                $(".divT").removeClass("hide");
+            }else {
+                $(".divT").addClass("hide");
+            }
+        };
+
+        function ReturnTop() {
+            $(window).scrollTop(0);
+        }
+    </script>
+</body>
+</html>

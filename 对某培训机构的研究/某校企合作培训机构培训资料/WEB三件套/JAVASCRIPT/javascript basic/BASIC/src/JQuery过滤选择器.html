@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery过滤选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // // 获取第一个li元素
+            // $("li:first").css("color","red");
+            // // 获取最后第一个li元素
+            // $("li:last").css("color","green");
+            // // 排除class="red"的li元素
+            // $("li:not(.red)").css("color","blue");
+            // 元素序号为偶数的li元素，从0开始
+            // $("li:even").css("color","red");
+            // 序号为奇数的li元素，从0开始
+            // $("li:odd").css("color","green");
+            // 获取第2个li元素，从0开始
+            $("li:eq(1)").css("color","yellow");
+            // 获取序号小于1的li元素，从0开始
+            $("li:gt(1)").css("color","red");
+            $("li:lt(1)").css("color","red");
+        });
+    </script>
+</head>
+<body style="background-color: ">
+    <div id="shi">
+        <ul>
+            <li class="red">君不见，黄河之水天上来，奔流到海不复回</li>
+            <li>君不见，高堂明镜悲白发，朝如青丝暮成雪</li>
+            <li>人生得意须尽欢，莫使金樽空对月</li>
+            <li class="red"> 天生我材必有用，千金散尽还复来</li>
+        </ul>
+        <ul>
+            <li class="red">君不见，黄河之水天上来，奔流到海不复回</li>
+            <li>君不见，高堂明镜悲白发，朝如青丝暮成雪</li>
+            <li>人生得意须尽欢，莫使金樽空对月</li>
+            <li class="red"> 天生我材必有用，千金散尽还复来</li>
+        </ul>
+    </div>
+
+</body>
+</html>

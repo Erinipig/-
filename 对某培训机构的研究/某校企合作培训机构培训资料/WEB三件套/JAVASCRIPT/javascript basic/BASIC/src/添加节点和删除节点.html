@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加节点和删除节点</title>
+    <script type="text/javascript">
+
+        function change(obj) {
+            // 设置文档的背景颜色
+            document.bgColor = obj.value();
+        }
+        function addNode() {
+            // 获取父元素对象
+            let sel = document.getElementById("color");
+            // 创建元素对象, 等同于HTML中<option></option>
+            let op = document.createElement("option");
+            // 给元素赋值
+            op.value = "yellow";
+            // 给文本赋值
+            op.innerHTML = "黄色";
+            // 此时等价于HTML中<option value="yellow">黄色</option>
+            // 把父节点添加到父节点中
+            sel.appendChild(op);
+        }
+        function delNote() {
+            // 获取父节点元素
+            let sel = document.getElementById("color");
+            // 获取最后一个子节点元素
+            let lc = sel.lastChild;
+            if (lc.nodeType==1) {
+                sel.removeChild(lc);
+            }else {
+                sel.removeChild(lc.previousSibling);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="添加元素" onclick="addNode()"/>
+    <input type="button" value="删除元素" onclick="delNote()"/>
+    <br />
+    <select id="color" onchange="change(this)">
+        <option value="">---PLEASE CHOOOS-</option>
+        <option value="red">红色</option>
+        <option value="black">黑色</option>
+        <option value="blue">蓝色</option>
+        <option value="orange">橙色</option>
+    </select>
+</body>
+</html>

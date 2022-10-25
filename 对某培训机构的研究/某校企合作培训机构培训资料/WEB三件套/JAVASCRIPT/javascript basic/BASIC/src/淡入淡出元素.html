@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出元素</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                // 如果按钮上的文字是“淡入”则显示元素
+                if ($(this).val()=="淡入") {
+                    // 显示图片元素
+                    $("img").fadeIn(1000,function () {
+                        $(this).css("border","3px solid blue").css("padding","20px");
+                    });
+                    $(this).val("淡出");
+                }else {
+                    // 显示图片元素
+                    $("img").fadeOut(1000,function () {
+                        alert("what's up")
+                    });
+                    $(this).val("淡入");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="image/1.png" width="300px" height="200px">
+    <br/>
+    <input type="button" id="btn" value="淡入">
+</body>
+</html>

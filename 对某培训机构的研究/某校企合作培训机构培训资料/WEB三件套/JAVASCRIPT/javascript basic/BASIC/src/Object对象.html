@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object对象创建</title>
+    <script type="text/javascript">
+        // 创建对象
+        let person = new Object();
+        // 给对象设置属性并添加属性
+        person.id = 1;
+        person.name = "jobs";
+        person.sex = "man";
+        person.age = 20;
+        // 给对象添加函数
+        person.show = function () {
+            // 对象函数中使用对象中的属性使用this调用，this指当前对象personnel
+            console.log("编号："+this.id+",姓名："+this.name+",性别："+this.sex+",年龄："+this.age)
+        }
+        // 调用对象属性,对象名.属性名
+        console.log(person.name); // jobs
+        // 调用对象函数，对象名.函数名(参数列表)
+        person.show(); // 编号：1,姓名：jobs,性别：man,年龄：20
+
+
+        // 2.创建对象，直接使用一对大括号初始化值
+        let student = {
+            // 属性名：属性值，多个属性之间逗号隔开，最后一个不需要逗号
+            id:1,
+            name:"jobs",
+            sex:"man",
+            age:20,
+            // 函数名:函数值
+            show:function () {
+                console.log("编号："+this.id+",姓名："+this.name+",性别："+this.sex+",年龄："+this.age)
+            }
+        }
+        // 调用对象属性,对象名.属性名
+        console.log(person.name); // jobs
+        // 调用对象函数，对象名.函数名(参数列表)
+        person.show(); // 编号：1,姓名：jobs,性别：man,年龄：20
+    </script>
+</head>
+<body>
+    <p><input type="button" value="显示姓名"/></p>
+</body>
+</html>

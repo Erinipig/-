@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery基本选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // id选择器，css()方法设置元素的样式，jQuery对象的方法支持链式调用
+            $("#shi").css("width","450px").css("height","100px").css("backgroundColor","#eee");
+            // class选择器
+            $(".red").css("color","red");
+            // 标签选择器
+            $("li").css("color","blue");
+            // 页面所有元素被选择
+            $("*").css("margin","0px").css("padding","0px");
+        });
+    </script>
+</head>
+<body>
+    <div id="shi">
+        <ul>
+            <li class="red">君不见，黄河之水天上来，奔流到海不复回</li>
+            <li>君不见，高堂明镜悲白发，朝如青丝暮成雪</li>
+            <li> 人生得意须尽欢，莫使金樽空对月</li>
+            <li class="red"> 天生我材必有用，千金散尽还复来</li>
+        </ul>
+    </div>
+</body>
+</html>

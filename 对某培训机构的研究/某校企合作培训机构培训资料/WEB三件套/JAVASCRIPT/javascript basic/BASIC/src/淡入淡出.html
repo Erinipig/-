@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+</head>
+<body>
+    <input type="button" id="in">fadein<br/>
+    <input type="button" id="out">fadeout<br/>
+    <input type="button" id="toggle">fade toggle<br/>
+    <input type="button" id="fadeto">fade to<br/>
+    <div id="id1" style="display:none; width: 80px;height: 80px;background-color: blueviolet"></div>
+    <div id="id2" style="display:none; width: 80px;height: 80px;background-color: orangered "></div>
+    <div id="id3" style="display:none; width: 80px;height: 80px;background-color: darkgreen "></div>
+
+<script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(document).ready(function(){
+        $("#in").click(function(){
+            $("#id1").fadeIn(1000);
+            $("#id2").fadeIn(1000);
+            $("#id3").fadeIn(1000);
+
+        });
+        $("#out").click(function(){
+            $("#id1").fadeOut(1000);
+            $("#id2").fadeOut(1000);
+            $("#id3").fadeOut(1000);
+
+        });
+        $("#toggle").click(function(){
+            $("#id1").fadeToggle(1000);
+            $("#id2").fadeToggle(1000);
+            $("#id3").fadeToggle(1000);
+
+        });
+        $("#fadeto").click(function(){
+            $("#id1").fadeTo(1000,0.4);
+            $("#id2").fadeTo(1000,0.5);
+            $("#id3").fadeTo(1000,0);
+        });
+    });
+</script>
+</body>
+</html>

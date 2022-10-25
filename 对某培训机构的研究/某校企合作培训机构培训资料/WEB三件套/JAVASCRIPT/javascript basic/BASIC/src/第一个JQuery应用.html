@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个JQuery应用</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        /**
+         * $是JQuery简称，$()代表jQuery对象，把DOM对象转换成jQuery对象，jQuery对象=$(dom对象)
+         * DOM对象：原生js对象
+         * jQuery对象：使用jQuery框架中的对象，可以看做是js对象的数组
+         * 他们之间的转换关系：jQuery对象=$(dom对象)，dom对象=jQuery对象[0]
+         * dom对象和jQuery各自使用各自的方法，不能交叉使用
+         */
+        // 调用jQuery对象的ready()，当页面加载完成后执行，类似于dom对象中的onload事件
+        $(document).ready(function () {
+            console.log("页面加载完成");
+        });
+
+        // 简写方式
+        $(function () {
+            console.log("页面也加载完成了");
+
+            // 使用原生js实现
+            let name = document.getElementById("name").value;
+            document.getElementById("name").onclick = function() {
+                let name = document.getElementById("name").value;
+                console.log(name);
+            }
+
+            // 使用jQuery实现
+            // 获取按钮并绑定点击事件
+            $("#btn").click(function () {
+                // 获取输入框的内容
+                alert($("#name").val());
+            });
+        });
+
+    </script>
+</head>
+<body>
+    姓名：<input type="text" id="name" value="" />
+    <input type="button" id="btn" value="获取姓名" />
+</body>
+</html>

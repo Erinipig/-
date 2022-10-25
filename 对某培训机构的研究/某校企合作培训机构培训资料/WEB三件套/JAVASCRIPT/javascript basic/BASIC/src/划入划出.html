@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>划入划出</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#btn").click(function () {
+                if ($(this).val()=="滑入") {
+                    // 改变元素的高度滑入显示元素
+                    $("img").slideDown(3000,function () {
+                        $(this).css("border","10px solid red").css("padding","20px");
+                    })
+                    $(this).val("滑出");
+                }else {
+                    $("img").slideUp(3000,function () {
+                        alert("perfect！");
+                    })
+                    $(this).val("滑入");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="滑出">
+    <hr/>
+    <img src="image/1.png" width="300px" height="200px">
+    <img src="image/2.png" width="300px" height="200px">
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态添加表格</title>
+    <script type="text/javascript">
+
+        function addRow() {
+            // 获取输入框中的ID值
+            let name = document.getElementById("name").value;
+            let sex = document.getElementById("sex").value;
+            let age = document.getElementById("age").value;
+            let classes = document.getElementById("classes").value;
+            let phone = document.getElementById("phone").value;
+
+            // 获取表哥对象
+            let table = document.getElementById("student");
+
+            // 创建行对象
+            let tr = document.createElement("tr");
+
+            // 1.创建“姓名”列对象
+            let nameTd = document.createElement("td");
+            // 给“姓名列内容赋值”
+            nameTd.innerHTML = name;
+
+            // 2.创建“性别”列对象
+            let sexTd = document.createElement("td");
+            // 给“性别列内容赋值”
+            sexTd.innerHTML = sex;
+
+            // 3.创建“年龄”列对象
+            let ageTd = document.createElement("td");
+            // 给“姓名列内容赋值”
+            ageTd.innerHTML = age;
+
+            // 4.创建“班级”列对象
+            let classesTd = document.createElement("td");
+            // 给“班级列内容赋值”
+            classesTd.innerHTML = classes;
+
+            // 5.创建“电话”列对象
+            let phoneTd = document.createElement("td");
+            // 给“电话列内容赋值”
+            phoneTd.innerHTML = phone;
+
+            // 7.创建“删除按钮”列对象
+            let btnTd = document.createElement("td");
+            // 给"删除按钮"列内容赋值
+            btnTd.innerHTML = '<a href="javascript:;" onclick="del(this)">删除</a>';
+
+            // 把各列添加到行对象中
+            tr.appendChild(nameTd);
+            tr.appendChild(sexTd);
+            tr.appendChild(ageTd);
+            tr.appendChild(classesTd);
+            tr.appendChild(phoneTd);
+            tr.appendChild(btnTd);
+
+            // 把
+            table.appendChild(tr);
+        }
+        function del(obj) {
+            // 表哥对象
+            let table = document.getElementById("student");
+            // 要删除的行对象
+            let tr = obj.parentNode.parentNode;
+            // alert(tr.innerHTML);
+            // 删除行对象
+            table.removeChild(tr);
+        }
+    </script>
+</head>
+<body>
+    <table border="1" id="student">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>班级</td>
+            <td>电话</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>man</td>
+            <td>20</td>
+            <td>Baidu2class</td>
+            <td>110120119</td>
+            <td>
+                <a href="javascript:;" onclick="del(this)">delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>man</td>
+            <td>19</td>
+            <td>Baidu2class</td>
+            <td>110120119</td>
+            <td>
+                <a href="javascript:;" onclick="del(this)">delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>alise</td>
+            <td>girl</td>
+            <td>20</td>
+            <td>Baidu2</td>
+            <td>110120119</td>
+            <td>
+                <a href="javascript:;" onclick="del(this)">delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Steven</td>
+            <td>man</td>
+            <td>18</td>
+            <td>Baidu2class</td>
+            <td>110120119</td>
+            <td>
+                <a href="javascript:;" onclick="del(this)">delete</a>
+            </td>
+        </tr>
+    </table>
+    <input type="text" id="name" placeholder="please input your name"/> <br />
+    <select id="sex">
+        <option value="">--please choose--</option>
+        <option value="man">man</option>
+        <option value="woman">woman</option>
+    </select> <br />
+    <input type="text" id="age" placeholder="please input your age"/> <br />
+    <input type="text" id="classes" placeholder="please input your class"/> <br />
+    <input type="text" id="phone" placeholder="please input your phone"/> <br />
+    <input type="button" value="delete date" onclick="addRow()"/>
+</body>
+</html>

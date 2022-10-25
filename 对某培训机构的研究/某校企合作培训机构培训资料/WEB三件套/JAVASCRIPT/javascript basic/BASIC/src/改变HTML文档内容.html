@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变HTML文档内容</title>
+    <script type="text/javascript">
+        document.write("<h3>Hello world</h3>")
+        document.write("当前系统时间："+new Date());
+        document.write("<h3>你好世界</h3>")
+    </script>
+</head>
+<body>
+    <p id="demo" style="color: red"> <h4>点击显示随机数</h4></p>
+    <button onclick="this.innerHTML=Date()">查看现在时间</button>
+    <button onclick="myFunction()">点击我获取随机数</button>
+
+    <input type="button" value="改变内容" onclick="changeContent()" />
+    <input type="button" value="改变样式" onclick="changeStyle()"/>
+    <input type="button" value="改变图片" onclick="changeAttr()"/>
+
+
+    <div id="show">
+        <p>
+            君不见黄河之水天上来，奔流到海不复回
+        </p>
+        <p>
+            君不见高堂明镜悲白发，穆如青丝
+        </p>
+    </div>
+    <div>
+        <img src="image/1.png" alt="广西的风景图" title="壮美广西山水真美" width="200px" height="200px" id="pic"/>
+    </div>
+    <script type="text/javascript">
+        function changeContent() {
+            let show = document.getElementById("show");
+            // 输入元素中的惠特米勒内容
+            alert(show.innerHTML);
+            // 输出元素中的文本内容
+            alert(show.innerText);
+            // 修改元素中的HTML内容
+            show.innerHTML = "<p>Hello World！</p>";
+        }
+        function myFunction() {
+            document.getElementById("demo").innerHTML = Math.random();
+        }
+        // 定义改变样式胡函数
+        function changeStyle() {
+            let show = document.getElementById("show");
+            show.style.fontSize = "20px";
+            show.style.color = "red";
+            show.style.fontWeight = "bold";
+            show.style.fontFamily = "楷体";
+        }
+        function changeAttr() {
+            let pic = document.getElementById("pic");
+            pic.src = "image/2.png";
+        }
+    </script>
+</body>
+</html>

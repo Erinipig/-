@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变元素的值</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#setValue").click(function () {
+                $("input[name='name']").val("jobs");
+                $("input[name='sex']:eq(1)").prop("checked",true);
+                $("input[name='hobby']:lt(2)").prop("checked",true);
+                $("select[name='edu']").val("3");
+            });
+            $("#getValue").click(function () {
+                // 获取文本输入框的智慧
+                console.log($("input[name='name']").val());
+                // 获取单选框的值
+                console.log($(":radio:checked").val());
+                // 获取复选框的值
+                $(":checkbox:checked").each(function (index,el) {
+                    console.log($(el).val());
+                });
+                console.log($("select[name='edu']").val());
+            });
+        })
+    </script>
+</head>
+<body>
+    NAME: <input type="text" name="name" value=""> <br />
+    SEX: <input type="radio" Nname="sex" value="playboy">
+         <input type="radio" name="sex" value="playgirl"> <br />
+    HOBBY: <input type="checkbox" name="hobby" value="STUDY">STUDY
+    <input type="checkbox" name="hobby" value="GAME">GAME
+    <input type="checkbox" name="hobby" value="SPORT">SPORT
+    <input type="checkbox" name="hobby" value="MUSIC">MUSIC<br />
+    NUMBER: <select name="edu">s
+            <option value="">--PLEASE CHOOSE--</option>
+            <option value="1">CHINESE</option>
+            <option value="2">ENGLISH</option>
+            <option value="3">FRENCH</option>
+        </select><br/>
+    <input type="button" id="setValue" value="setting value" />
+    <input type="button" id="getValue" value="getting value" />
+</body>
+</html>

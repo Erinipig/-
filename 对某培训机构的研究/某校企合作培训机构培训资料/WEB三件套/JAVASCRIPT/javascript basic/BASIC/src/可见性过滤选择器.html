@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可见性过滤选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            $("#show").click(function () {
+                //  获取所以隐藏的样式为pic的元素，调用show()显示出来
+                $(".pic:hidden").show();
+            })
+            $("#hide").click(function () {
+                //  获取所以隐藏的样式为pic的元素，调用hide()显示出来
+                $(".pic:visible").hide();
+            })
+        });
+    </script>
+</head>
+<body>
+    <input type="button" id="show" value="显示图片" />
+    <input type="button" id="hide" value="隐藏图片" />
+    <br />
+    <img src="image/1.png" width="300px" height="200px" class="pic" />
+    <img src="image/2.png" width="300px" height="200px" class="pic" />
+</body>
+</html>

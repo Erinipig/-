@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入追加或插入元素对象</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("h3").click(function () {
+                // 创建ul元素对象
+                let $ul = $("<ul></ul>")
+                // 创建li元素对象
+                let $li1 = $("<li>红楼梦-曹雪芹</li>");
+                let $li2 = $("<li>西游记-吴承恩</li>");
+                let $li3 = $("<li>水浒传-施耐庵</li>");
+                let $li4 = $("<li>三国演义-罗贯中</li>");
+                // ul元素中追加li元素
+                $ul.append($li1);
+                $ul.append($li2);
+                $ul.append($li3);
+                $ul.append($li4);
+                // 在当前元素对象的尾部追加ul元素（外部追加）
+                // $(this).after($ul);
+                // 把ul元素追加到当前元素对象的尾部
+                // $ul.insertAfter($(this));
+                // 在当前元素的对象的头部插入（外部插入）
+                // $(this).before($ul);
+                // 把当前元素插入到当前元素对象的头部
+                $ul.insertBefore($(this));
+            })
+        })
+    </script>
+</head>
+<body>
+    <h3>文学名称</h3>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>根据标签获取对象</title>
+    <style type="text/css">
+        li {
+            width: 100px;
+            height: 100px;
+            background-color: beige;
+            list-style: none;
+            float: right;
+            margin: 0px 50px;
+            text-align: center;
+            line-height: 230px;
+            border-radius: 50%;
+        }
+        /*li:hover {*/
+        /*    background-color: indianred;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="box">more love</li>
+        <li class="box">lifestyle</li>
+        <li class="box">sport</li>
+        <li class="box">play PC</li>
+    </ul>
+    <script type="text/javascript">
+        // 根据标签名称获取元素，返回数组
+        // let lis = document.getElementsByTagName("li");
+        let lis = document.getElementsByClassName("box");
+        for (let i=0;i<lis.length;i++) {
+            // 给对象绑定鼠标移入事件
+            lis[i].onmouseover = function() {
+                this.style.backgroundColor = "red";
+            }
+            lis[i].onmouseout = function() {
+                this.style.backgroundColor = "";
+            }
+        }
+    </script>
+</body>
+</html>

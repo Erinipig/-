@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性值过滤选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("input[id='all']").change(function () {
+                // 获取所有name=hobby的input元素,设置属性checked值为当前选中的复选框checked属性值
+                $("input[name='hobby']").attr("checked",this.checked);
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="all">ALL CHOOSE<br />
+    <input type="checkbox" name="hobby" value="Study">Study<br />
+    <input type="checkbox" name="hobby" value="GAME">GAME<br />
+    <input type="checkbox" name="hobby" value="SPORT">SPORT<br />
+    <input type="checkbox" name="hobby" value="CAMERA">CAMERA<br />
+
+</body>
+</html>

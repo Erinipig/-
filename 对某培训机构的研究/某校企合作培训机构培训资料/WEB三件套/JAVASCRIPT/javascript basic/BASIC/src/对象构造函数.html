@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象构造函数</title>
+    <script type="text/javascript">
+        function Person(id,name,sex,age) {
+            this.id = id;
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+            this.show = function () {
+                console.log("编号："+this.id+",姓名："+this.name+",性别："+this.sex+",年龄："+this.age);
+            }
+        }
+        let p1 = new Person(1,"john","man",20);
+        console.log(p1.name);
+        p1.show();  // 编号：1,姓名：john,性别：man,年龄：20
+
+        let p2 = new Person(2,"jobs","girl",19);
+        console.log(p2.name);
+        p2.show(); // 编号：2,姓名：jobs,性别：girl,年龄：19
+
+        with (p1) {
+            console.log(id);
+            console.log(name);
+            console.log(sex);
+            console.log(age);
+            show();
+        }
+        with (p2) {
+            console.log(id);
+            console.log(name);
+            console.log(sex);
+            console.log(age);
+            show();
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

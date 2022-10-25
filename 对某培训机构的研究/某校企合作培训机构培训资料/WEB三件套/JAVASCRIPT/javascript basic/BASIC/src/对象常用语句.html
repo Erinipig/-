@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象常用语句</title>
+    <script type="text/javascript">
+        let obj = {
+            id:1,
+            name:"john",
+            sex:"man",
+            age:20
+        }
+        for (let attr in obj) {
+            console.log(attr+"="+obj[attr]);
+        }
+
+        let array = [1,2,3,4,5,6];
+        for (let i in array) {
+            console.log(array[1]);
+        }
+        let student = [
+            {
+                id:1,
+                name:"john",
+                sex:"man",
+                age:20
+            },
+            {
+                id:2,
+                name:"steve",
+                sex:"man",
+                age:20
+            },
+            {
+                id:3,
+                name:"azhen",
+                sex:"man",
+                age:20
+            }
+        ]
+        for (let i in student) {
+            let s = student[i];
+            console.log("__________________________")
+            for (let attr in s) {
+                console.log(attr+"="+s[attr]);
+            }
+
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

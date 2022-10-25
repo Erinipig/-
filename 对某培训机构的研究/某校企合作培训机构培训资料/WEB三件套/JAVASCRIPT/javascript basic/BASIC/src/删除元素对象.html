@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除元素对象</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("#btn").click(function () {
+                // 选择ul元素中的所有li元素，并删除
+                // $("ul li").remove();
+                // 选择ul元素中的最后一个li元素，并删除
+                $("ul li:last").remove();
+        })
+    })
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>红楼梦-曹雪芹</li>
+        <li>西游记-吴承恩</li>
+        <li>水浒传-施耐庵</li>
+    </ul>
+    <input type="button" id="btn" value="删除后元素">
+</body>
+</html>

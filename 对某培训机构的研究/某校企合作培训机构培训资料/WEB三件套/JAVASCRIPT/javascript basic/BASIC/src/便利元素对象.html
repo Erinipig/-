@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>遍历元素对象</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                $( "img").each(function (index,el) {
+                    // 设置对象样式属性中的边框，
+                    el.style.border = "2px solid red";
+                    //
+                    el.title = "这是第"+(index+1)+"张图片";
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <img src="image/1.png" width="200px" height="100px">
+    <img src="image/1.png" width="200px" height="100px"><br/>
+
+    <input type="button" id="btn" value="改变样式">
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>改变对象的样式</title>
+    <style type="text/css">
+        /* 定义样式类名 */
+        .abc {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        .p1 {
+            color: red;
+            font-size: 20px;
+            font-width: bold;
+            font-family: 楷体;
+            background-color: cyan;
+        }
+        .hide {
+            display: none;
+        }
+
+    </style>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // 2.jQuery对象支持函数练市调用写法
+            // $("#bg").css("width","100px").css("height","100px").css("backgroundColor","blue");
+            // 创建对象
+            /*
+            let obj = {
+                width:"100px",
+                height:"100px",
+                backgroundColor:"brown",
+            }
+            // 2.传递对象
+            $("#bg").css(obj);
+             */
+            // 3. 添加样式类名
+            $("#bg").addClass("abc");
+
+            $("#add").click(function () {
+                // 添加样式名p1
+                $("p").addClass("p1");
+            })
+            $("#del").click(function () {
+                // 移除样式名p1
+                $("p").removeClass("p1");
+            })
+            $("#btn").click(function () {
+                // 添加或者移除样式p1，如果元素当前有样式p1则移除，没有则添加
+                $("p").toggleClass("p1");
+            })
+            $("#change").click(function () {
+                //
+                $("#pic").toggleClass("hide");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="bg">
+
+    </div>
+    <p class="p1">
+        这是一个段落
+    </p>
+
+    <input type="button" id="add" value="添加样式" />
+    <input type="button" id="del" value="移除样式" />
+    <input type="button" id="btn" value="改变文字样式" />
+
+    <br />
+    <img src="image/1.png" width="200px" height="100px" id="pic">
+    <br />
+    <input type="button" id="change" value="显示/隐藏按钮">
+
+</body>
+</html>

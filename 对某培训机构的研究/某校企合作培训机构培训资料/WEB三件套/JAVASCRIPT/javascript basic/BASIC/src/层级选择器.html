@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            // h1~h6标签选择
+            // $(":header").css("color","red");
+            // h3标签写一个相邻的ul元素的所有子元素li
+            // $(":header+ul>li").css("color","yellow");
+            // 第二层ul下的所有li元素
+            // $(":header+ul>li>ul>li").css("color","blue");
+            // $(":header+ul li").css("color","green");
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="BULLSHIT"><BR />
+
+    <h3>你喜欢的，肯定不是那个啦</h3>
+
+        <ul>
+            <li>
+                游戏
+                    <ul>
+                        <li>王者荣耀</li>
+                        <li>英雄联盟</li>
+                        <li>绝地求生</li>
+                        <li>穿越火线</li>
+                        <li>GTA5</li>
+                    </ul>
+            </li>
+            <li>
+                影视
+                <ul>
+                    <li>原神</li>
+                    <li>魔兽世界</li>
+                    <li>CTF</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>
+                小说
+                <ul>
+                    <li>王者荣耀</li>
+                    <li>英雄联盟</li>
+                    <li>绝地求生</li>
+                    <li>穿越火线</li>
+                </ul>
+            </li>
+        </ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单增删改查</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#add").click(function () {
+                // 创建新的元素对象
+                let $option = $("<option value=\'北海市\'>北海市</option>");
+                // 在下拉里表中添加新的元素对象
+                $("#city").append($option);
+            });
+            $("#edit").click(function () {
+                let $option = $("<option value=\'---修改成功---\'>---修改成功---</option>");
+                // 下拉列表中第一个选项替换成新的元素对象
+                $("select option:eq(1)").replaceWith($option);
+            });
+            $("#del").click(function () {
+                // 删除最后一个选项
+                $("select option:last").remove();
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="add" value="添加元素">
+    <input type="button" id="edit" value="修改元素">
+    <input type="button" id="del" value="删除元素">
+    <br/>
+    <select id="city">
+        <option value="">--请选择--</option>
+        <option value="南宁市">南宁市</option>
+        <option value="柳州市">柳州市</option>
+        <option value="桂林市">桂林市</option>
+        <option value="American">自由美利坚</option>
+    </select>
+</body>
+</html>

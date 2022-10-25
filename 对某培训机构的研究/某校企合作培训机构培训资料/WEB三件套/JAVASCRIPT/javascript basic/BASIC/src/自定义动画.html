@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义动画</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            $("img").click(function () {
+                // 在元素中添加自定义动画，如果多个动画，加入到动画队列中，按照加入顺序执行
+                $(this).animate( {
+                    width: "10%",
+                    height: "10%",
+                    opacity: "0.2",
+                    borderRadius: "50%"
+                },3000);
+                $(this).animate( {
+                    width: "200px",
+                    height: "100px",
+                    opacity: "0.8",
+                },3000);
+                $(this).animate( {
+                    width: "200px",
+                    height: "100px",
+                    opacity: "1",
+                    opacity: 1
+                },3000);
+            })
+            $("#btn").click(function () {
+                // 停止正在执行的动画，开始执行队列中后面的动画
+                // $("img").stop();
+                // 停止正在运行的动画
+                
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="Stop">
+    <hr/>
+    <img src="image/1.png">
+</body>
+</html>

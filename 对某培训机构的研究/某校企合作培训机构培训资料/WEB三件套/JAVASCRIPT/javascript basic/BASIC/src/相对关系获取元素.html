@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相对关系获取元素</title>
+    <script type="text/javascript">
+        function getParent() {
+            // 获取子节点
+            let child = document.getElementById("children");
+            // 获取父节点
+            let parent = child.parentNode;
+            // 改变父节点元素的样式
+            parent.style.fontSize = "20px";
+            parent.style.color = "blue";
+            parent.style.fontWeight = "bold";
+            parent.style.fontFamily = "楷体";
+        }
+        function getChildren() {
+            // 获取父节点
+            let parent = document.getElementById("parent");
+            // 获取子节点
+            let childs = parent.childNodes;
+            // alert(childs.length); // 7
+            for (let i=0;i<childs.length;i++){
+                // 根据nodeType判断节点类型，1是元素节点，html元素节点包括。文档节点，元素节点，属性节点，文本节点，注意节点五种类型
+                if (childs[].nodeType == 1) {
+                    // 控制台输出元素节点的HTML内容
+                    console.log(childs[i].innerHTML)
+                }
+            }
+        }
+    </script>
+</head>
+    <body>
+        <div id="parent">
+            <p>0xlrjfltss9vesyng@tutanota.com</p>
+            <p id="children">0xlrjfltss9vesyng@gmail.com</p>
+            <p>stupidbirdf6379g@gmail.com</p>
+            <input type="button" value="获取父节点" onclick="getParent()"/>
+            <input type="button" value="获取子节点" onclick="getChildren()"/>
+        </div>
+    </body>
+</html>

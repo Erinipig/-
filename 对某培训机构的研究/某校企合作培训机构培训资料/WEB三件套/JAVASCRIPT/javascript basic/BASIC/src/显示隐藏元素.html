@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示隐藏元素</title>
+    <script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#btn").click(function () {
+                // 如果按钮的文字是：“显示”则显示图片
+                if ($(this).val()=="显示") {
+                    // 显示元素，可以使用第一个参数指定完全显示动画的持续时间，系统提供slow,normal,fast 三个值，也可以指定数字，单位毫秒（2000）
+                    $("img").show(1000,function () {
+                        // $(this)至当前img元素，图片完全显示后自动触发回调函数，改变元素的边框，内边距样式
+                        $(this).css("border","3px solid blue").css("padding","20px");
+                    });  // fast slow
+                    // 改变按钮上的文字为“隐藏”
+                    $(this).val("隐藏")
+                }else {
+                    // 隐藏元素
+                    $("img").hide(1000,function () {
+                        alert("图片隐藏完成");
+                    });
+                    $(this).val("显示");
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="image/1.png" width="300px" height="200px"><br/>
+    <input type="button" id="btn" value="隐藏">
+
+</body>
+</html>

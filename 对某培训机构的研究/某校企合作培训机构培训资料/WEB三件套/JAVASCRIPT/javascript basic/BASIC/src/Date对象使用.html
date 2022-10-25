@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象使用</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function showTime() {
+            // 创建时间对象，获取当前系统日期时间
+            let time = new Date();
+            // 调用对象ID额方法分别获取年月日时分秒星期数
+            let year = time.getFullYear();
+            let month = time.getMonth() + 1;
+            let date = time.getDate();
+            let hour = time.getHours();
+            let minute = time.getMinutes();
+            let second = time.getSeconds();
+            let week = time.getDay();
+            // 开始拼接
+            let timeStr = year + "-" + format(month) + "-" + format(date) + " " + format(hour) + ":" + format(minute) + ":" + format(second) + " " + formatWeek(week);
+            // 把时间字符串显示在页面指定位置
+            document.getElementById("showTime").innerHTML = timeStr;
+        }
+            // 页面加载完成调用函数
+            window.onload = showTime;
+            // 定时函数，间隔1秒重复执行
+            setInterval("showTime()",1000);
+
+            // 格式化月日时分秒不足2位，前面补0
+            function format(num) {
+                return num<10?"0"+num:num;
+            }
+            // 格式化星期
+            function formatWeek(num) {
+                let week;
+                switch (num) {
+                    case 1:
+                        week = "星期一";
+                        break;
+                    case 2:
+                        week = "星期二";
+                        break;
+                    case 3:
+                        week = "星期三";
+                        break;
+                    case 4:
+                        week = "星期四";
+                        break;
+                    case 5:
+                        week = "星期五";
+                        break;
+                    case 6:
+                        week = "星期六";
+                        break;
+                    default:
+                        week = "星期日";
+                        break;
+                }
+                return week;
+            }
+    </script>
+</body>
+    当前系统时间是: <span id="showTime"></span>
+</html>
