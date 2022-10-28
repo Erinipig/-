@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>首页</title>
+		<script src="js/jquery-3.6.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#addBtn").click(function(){
+					// 1. 获取输入框的值
+					let id = $("#id").val().trim();
+					let name = $("#name").val().trim();
+					let price = $("#price").val().trim();
+					// 2. 创建tr行元素对象，把获取到的值填充到td中
+					let $tr = $(`
+						<tr>
+							<td>${id}</td>
+							<td>${name}</td>
+							<td>${price}</td>
+							<td>
+								<input type="button" value="修改" onclick="editBook(this)"/>
+								<input type="button" value="删除" onclick="delBook(this)"/>
+							</td>
+						</tr>
+					`);
+					// 3. 在表格尾部追加tr行对象
+					$("#books").append($tr);
+					// 4. 清空输入框的值
+					$("#id").val("");
+					$("#name").val("");
+					$("#price").val("");
+				})
+				// 修改图书
+				$("#updateBtn").click(function(){
+					let id = $("#id").val().trim();
+					let name = $("#name").val().trim();
+					let price = $("#price").val().trim();
+					// 2. 创建tr行元素对象，把获取到的值填充到td中
+					let $tr = $(`
+						<tr>
+							<td>${id}</td>
+							<td>${name}</td>
+							<td>${price}</td>
+							<td>
+								<input type="button" value="修改" onclick="editBook(this)"/>
+								<input type="button" value="删除" onclick="delBook(this)"/>
+							</td>
+						</tr>
+					`);
+					// 3. 将创建的tr行对象替换原来的tr行对象
+					$tr.replaceAll($oldTr);
+					// 4. 清空输入框的值
+					$("#id").val("");
+					$("#name").val("");
+					$("#price").val("");
+					// 5. 显示“新增”按钮，隐藏“修改”按钮
+					$("#addBtn").show();
+					$("#updateBtn").hide();
+				});
+			})
+			
+			// 删除图书
+			function delBook(obj) {
+				if(confirm("你确定要删除吗？")) {
+					// obj是按钮对象，先转换成jQuery对象，然后调用2次parent方法，获取到tr对象，在调用remove方法删除
+					$(obj).parent().parent().remove();
+				}else {
+					alert("取消删除！");
+				}
+			}
+			
+			// 定义全局变量，表示将要被替换的行对象
+			let $oldTr;
+			// 获取图书信息进行修改
+			function editBook(obj) {
+				
+				// 1. 获取当前行中每一列内容
+				$oldTr = $(obj).parent().parent();
+				// 获取tr中的所有td元素
+				let childs = $oldTr.children();
+				// 获取第一个td单元格中的文本内容，也就是id值
+				let id = childs.eq(0).text();
+				// 获取第一个td单元格中的文本内容，也就是name值
+				let name = childs.eq(1).text();
+				// 获取第一个td单元格中的文本内容，也就是price值
+				let price = childs.eq(2).text();
+				
+				// 2. 把获取到的内容填充到输入框中
+				$("#id").val(id);
+				$("#name").val(name);
+				$("#price").val(price);
+				
+				// 3. 隐藏新增按钮，显示”修改“按钮
+				$("#addBtn").hide();
+				$("#updateBtn").show();
+				
+				// 4. 
+			}
+		</script>
+	</head>
+	<body>
+		
+		<h3> 图书管理系统后台页面 </h3>
+		<table border="2" id="books">
+			<tr>
+				<th>编号</th>
+				<th>书名</th>
+				<th>价格</th>
+				<th>操作</th>
+			</tr>
+		</table>
+		<br/>
+		编号：<input type="text" id="id" /><br/>
+		书名：<input type="text" id="name" /><br/>
+		价格：<input type="text" id="price" /><br/>
+			<input type="button" id="addBtn" value="新增" />
+			<input type="button" id="updateBtn" value="修改" style="display: none;"/>
+			
+	</body>
+</html>
