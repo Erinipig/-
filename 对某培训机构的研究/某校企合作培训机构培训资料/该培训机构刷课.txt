@@ -1,2 +1,57 @@
-去除聚焦属性解除多操作停止视频播放：
-F12 remove blur事件属性，该网站没有多开检测和倍数播放等刷课手段限制。
+# 去除聚焦属性解除多操作停止视频播放：
+# F12 remove blur事件属性，该网站没有多开检测和倍数播放等刷课手段限制。
+
+# 51moot去除焦点检测主要核心代码
+
+if (!-[1,] && !window.XMLHttpRequest || navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+        document.onfocusout = function () {
+            return true;
+        }
+    } else {
+        window.onblur = function () {
+            return true;
+        }
+    }
+
+# 全部功能实现
+
+var interval = setInterval(function() {
+    var elementPlayView = document.querySelector(".pv-video");
+    if (elementPlayView) {
+        if (!- [1, ] && !window.XMLHttpRequest || navigator.userAgent.indexOf("MSIE 8.0") > 0) {
+            document.onfocusout = function() {
+                return true
+            }
+        } else {
+            window.onblur = function() {
+                return true
+            }
+        }
+        var elementBtnPlay = document.querySelector(".pv-controls-left .pv-icon-btn-play");
+        if (elementBtnPlay) {
+            elementBtnPlay.click()
+        }
+        if (document.querySelector(".pv-progress-current-bg").style.width == "100%") {
+            setTimeout(function() {
+                var elmentLi = document.querySelector(".vedio-play-conts-left-chapter-list .active");
+                if (elmentLi.nextElementSibling == null) {
+                    var elementLastDirectory = elmentLi.parentNode.parentNode.parentNode.nextElementSibling;
+                    if (elementLastDirectory != null) {
+                        elementLastDirectory.querySelectorAll(".vedio-play-conts-left-chapter-list li")[0].click()
+                    } else {
+                        clearInterval(interval);
+                        alert("本课程已播放完成");
+                    }
+                } else {
+                    elmentLi.nextElementSibling.click()
+                }
+            },
+            3000)
+        }
+        var elementVolumeon = document.querySelector(".pv-icon-volumeon");
+        if (elementVolumeon) {
+            elementVolumeon.click()
+        }
+    }
+},
+1000);
